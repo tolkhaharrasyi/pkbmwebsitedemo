@@ -1,0 +1,9 @@
+{
+  "name": "pkbm-tailwind-tools",
+  "private": true,
+  "description": "Alat untuk membangun ulang CSS. Tidak dipakai Vercel (hanya perlu saat mengubah kelas Tailwind).",
+  "scripts": {
+    "css": "tailwindcss -c tailwind.public.config.js -i input.css -o ../../assets/css/public.css --minify && tailwindcss -c tailwind.admin.config.js -i input.css -o ../../assets/css/admin.css --minify"
+  },
+  "devDependencies": { "tailwindcss": "3.4.17" }
+}

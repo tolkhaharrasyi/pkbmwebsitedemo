@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body { margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { overscroll-behavior: none; }
+  main > :first-child { margin-top: 0 !important; }
+  main > :last-child { margin-bottom: 0 !important; }
+  img, svg, video { max-width: 100%; }
+}
+
+/* Tabel yang berubah menjadi kartu di layar kecil (kelas .rt + atribut data-label) */
+@media (max-width: 767px) {
+  .rt { min-width: 0 !important; width: 100%; }
+  .rt thead { display: none; }
+  .rt tbody, .rt tr, .rt td { display: block; width: 100%; }
+  .rt tr { padding: 14px 4px; border-bottom: 1px solid #E3EAF5; }
+  .rt td { padding: 4px 12px !important; text-align: left !important; max-width: none !important; min-width: 0 !important; white-space: normal !important; }
+  .rt td[data-label]::before { content: attr(data-label); display: block; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #5B6B85; margin-bottom: 2px; }
+  .rt td:last-child { display: flex; justify-content: flex-end; gap: 4px; }
+}
+
+/* Jaring pengaman: cegah gulir ke samping di seluruh halaman */
+html, body { overflow-x: clip; }
